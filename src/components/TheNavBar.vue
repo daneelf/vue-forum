@@ -1,7 +1,7 @@
 <template>
   <header class="header" id="header">
     <router-link :to="{ name: 'Home' }" class="logo">
-      <img src="../assets/svg/vueschool-logo.svg" />
+      <img src="../assets/svg/Vue.js_Logo_2.svg" />
     </router-link>
 
     <div class="btn-hamburger">
