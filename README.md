@@ -1,4 +1,4 @@
-# vueschool-forum
+# vue-forum
 
 ## Project setup
 ```
