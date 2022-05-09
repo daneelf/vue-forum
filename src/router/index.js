@@ -1,10 +1,11 @@
-import { Home, ThreadShow, NotFound, Forum } from "@/pages";
+import { Home, ThreadShow, NotFound, Forum, Profile } from "@/pages";
 import { Category } from "@/components";
 import { createRouter, createWebHistory } from "vue-router";
 import sourceData from "@/data.json";
 
 const routes = [
   { path: "/", name: "Home", component: Home },
+  { path: "/me", name: "Profile", component: Profile },
   { path: "/forum/:id", name: "Forum", component: Forum, props: true },
   {
     path: "/category/:id",
