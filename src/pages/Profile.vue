@@ -2,7 +2,7 @@
   <div class="container">
     <div class="flex-grid">
       <div class="col-3 push-top">
-        <div class="profile-card">
+        <!-- <div class="profile-card">
           <p class="text-center">
             <img :src="user.avatar" :alt="user.name" class="avatar-xlarge" />
           </p>
@@ -25,8 +25,8 @@
           <p v-if="user.website" class="text-large text-center">
             <i class="fa fa-globe"></i> <a :href="user.website">batman.com</a>
           </p>
-        </div>
-
+        </div> -->
+        <UserProfileCard :user="user" />
         <p class="text-xsmall text-faded text-center">
           Member since june 2003, last visited 4 hours ago
         </p>
@@ -41,44 +41,29 @@
 
       <div class="col-7 push-top">
         <div class="profile-header">
-          <span class="text-lead"> Joker's recent activity </span>
+          <span class="text-lead">{{ user.name }}'s recent activity </span>
           <a href="#">See only started threads?</a>
         </div>
 
         <hr />
 
-        <PostList :posts="userPosts" />
+        <PostList :posts="user.posts" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { PostList } from "@/components";
+import { PostList, UserProfileCard } from "@/components";
 import { mapGetters } from "vuex";
 
 export default {
   components: {
     PostList,
+    UserProfileCard,
   },
   computed: {
     ...mapGetters({ user: "authUser" }),
-    userPosts() {
-      return this.$store.state.posts.filter(
-        (post) => post.userId === this.user.id
-      );
-    },
-    userPostsCount() {
-      return this.userPosts.length;
-    },
-    userThreads() {
-      return this.$store.state.threads.filter(
-        (thread) => thread.userId === this.user.id
-      ).length;
-    },
-    userThreadsCount() {
-      return this.userThreads.length;
-    },
   },
 };
 </script>
