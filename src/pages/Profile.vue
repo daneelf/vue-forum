@@ -27,6 +27,7 @@
           </p>
         </div> -->
         <UserProfileCard :user="user" />
+        <UserProfileEditor :user="user" />
         <p class="text-xsmall text-faded text-center">
           Member since june 2003, last visited 4 hours ago
         </p>
@@ -54,13 +55,14 @@
 </template>
 
 <script>
-import { PostList, UserProfileCard } from "@/components";
+import { PostList, UserProfileCard, UserProfileEditor } from "@/components";
 import { mapGetters } from "vuex";
 
 export default {
   components: {
     PostList,
     UserProfileCard,
+    UserProfileEditor,
   },
   computed: {
     ...mapGetters({ user: "authUser" }),

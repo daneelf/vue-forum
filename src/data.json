@@ -1327,6 +1327,17 @@
   ],
   "users": [
     {
+      "avatar": "http://i.imgur.com/s0AzOkO.png",
+      "email": "danee@batmail.com",
+      "lastVisitAt": 1597226488,
+      "name": "Danee",
+      "isModerator": true,
+      "registeredAt": 1594042039,
+      "username": "danee",
+      "usernameLower": "danee",
+      "id": "jVa6Go6Nl1Urkag1R2p9CHTf4ny1"
+    },
+    {
       "avatar": "https://avatars3.githubusercontent.com/u/2327556?v=4&s=460",
       "email": "chrisvfritz@gmail.com",
       "lastVisitAt": 1594772078,
@@ -1453,17 +1464,6 @@
       "username": "blossom",
       "usernameLower": "blossom",
       "id": "jUjmgCurRRdzayqbRMO7aTG9X1G2"
-    },
-    {
-      "avatar": "http://i.imgur.com/s0AzOkO.png",
-      "email": "danee@batmail.com",
-      "lastVisitAt": 1597226488,
-      "name": "Danee",
-      "isModerator": true,
-      "registeredAt": 1594042039,
-      "username": "danee",
-      "usernameLower": "danee",
-      "id": "jVa6Go6Nl1Urkag1R2p9CHTf4ny1"
     },
     {
       "avatar": "https://i.imgur.com/OqlZN48.jpg",
