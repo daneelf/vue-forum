@@ -1,7 +1,7 @@
 <template>
   <header class="header" id="header">
     <router-link :to="{ name: 'Home' }" class="logo">
-      <img src="../assets/svg/vueschool-logo.svg" />
+      <img src="../assets/svg/Vue.js_Logo_2.svg" />
     </router-link>
 
     <div class="btn-hamburger">
@@ -15,7 +15,7 @@
     <nav class="navbar">
       <ul>
         <li class="navbar-user">
-          <a href="#">
+          <router-link :to="{ name: 'Profile' }">
             <img
               class="avatar-small"
               :src="authUser.avatar"
@@ -29,7 +29,7 @@
                 alt=""
               />
             </span>
-          </a>
+          </router-link>
 
           <!-- dropdown menu -->
           <!-- add class "active-drop" to show the dropdown -->

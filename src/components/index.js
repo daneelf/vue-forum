@@ -6,6 +6,8 @@ import ForumList from "@/components/ForumList";
 import CategoriesList from "@/components/CategoriesList";
 import Category from "@/components/Category";
 import TheNavBar from "@/components/TheNavBar";
+import UserProfileCard from "@/components/UserProfileCard";
+import UserProfileEditor from "@/components/UserProfileEditor";
 
 export {
   ThreadList,
@@ -16,4 +18,6 @@ export {
   CategoriesList,
   Category,
   TheNavBar,
+  UserProfileCard,
+  UserProfileEditor,
 };
