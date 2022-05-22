@@ -5,7 +5,19 @@ import sourceData from "@/data.json";
 
 const routes = [
   { path: "/", name: "Home", component: Home },
-  { path: "/me", name: "Profile", component: Profile },
+  {
+    path: "/me",
+    name: "Profile",
+    component: Profile,
+
+    meta: { toTop: true, smoothScroll: true },
+  },
+  {
+    path: "/me/edit",
+    name: "ProfileEdit",
+    component: Profile,
+    props: { edit: true },
+  },
   { path: "/forum/:id", name: "Forum", component: Forum, props: true },
   {
     path: "/category/:id",
@@ -43,4 +55,10 @@ const routes = [
 export default createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to) {
+    const scroll = {};
+    if (to.meta.toTop) scroll.top = 0;
+    if (to.meta.smoothScroll) scroll.behavior = "smooth";
+    return scroll;
+  },
 });
