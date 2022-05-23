@@ -1,4 +1,11 @@
-import { Home, ThreadShow, NotFound, Forum, Profile } from "@/pages";
+import {
+  Home,
+  ThreadShow,
+  NotFound,
+  Forum,
+  Profile,
+  ThreadCreate,
+} from "@/pages";
 import { Category } from "@/components";
 import { createRouter, createWebHistory } from "vue-router";
 import sourceData from "@/data.json";
@@ -48,6 +55,12 @@ const routes = [
         });
       }
     },
+  },
+  {
+    path: "/form/:forumId/thread/create",
+    name: "ThreadCreate",
+    component: ThreadCreate,
+    props: true,
   },
   { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
 ];
