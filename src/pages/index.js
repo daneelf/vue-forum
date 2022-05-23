@@ -3,5 +3,5 @@ import ThreadShow from "@/pages/ThreadShow";
 import NotFound from "@/pages/NotFound";
 import Forum from "@/pages/Forum";
 import Profile from "@/pages/Profile";
-
-export { Home, ThreadShow, NotFound, Forum, Profile };
+import ThreadCreate from "@/pages/ThreadCreate";
+export { Home, ThreadShow, NotFound, Forum, Profile, ThreadCreate };
