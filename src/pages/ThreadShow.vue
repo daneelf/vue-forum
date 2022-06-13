@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { PostList, PostEditor } from "@/components";
+import { PostList, PostEditor } from '@/components';
 
 export default {
   props: {
@@ -38,7 +38,7 @@ export default {
         ...eventData.post,
         threadId: this.id,
       };
-      this.$store.dispatch("createPost", post);
+      this.$store.dispatch('createPost', post);
     },
   },
 };

@@ -1,13 +1,13 @@
-import ThreadList from "@/components/ThreadList";
-import PostList from "@/components/PostList";
-import PostEditor from "@/components/PostEditor";
-import BaseDate from "@/components/BaseDate";
-import ForumList from "@/components/ForumList";
-import CategoriesList from "@/components/CategoriesList";
-import Category from "@/components/Category";
-import TheNavBar from "@/components/TheNavBar";
-import UserProfileCard from "@/components/UserProfileCard";
-import UserProfileEditor from "@/components/UserProfileEditor";
+import ThreadList from './ThreadList.vue';
+import PostList from './PostList.vue';
+import PostEditor from './PostEditor.vue';
+import BaseDate from './base/BaseDate.vue';
+import ForumList from './ForumList.vue';
+import CategoriesList from './CategoriesList.vue';
+import Category from './Category.vue';
+import TheNavBar from './TheNavBar.vue';
+import UserProfileCard from './UserProfileCard.vue';
+import UserProfileEditor from './UserProfileEditor.vue';
 
 export {
   ThreadList,

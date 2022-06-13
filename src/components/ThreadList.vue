@@ -1,35 +1,37 @@
 <template>
-  <div class="col-full">
-    <div class="thread-list">
-      <h2 class="list-title">Threads</h2>
-      <div v-for="thread in threads" :key="thread.id" class="thread">
-        <div>
-          <p>
-            <router-link
-              :to="{ name: 'ThreadShow', params: { id: thread.id } }"
-              >{{ thread.title }}</router-link
-            >
-          </p>
-          <p class="text-faded text-xsmall">
-            By <a href="#">{{ userById(thread.userId).name }}</a
-            >, <BaseDate :timestamp="thread.publishedAt" />.
-          </p>
-        </div>
-        <div class="activity">
-          <p class="replies-count">{{ thread.posts.length }} replies</p>
-          <img
-            class="avatar-medium"
-            :src="userById(thread.userId).avatar"
-            alt=""
-          />
+  <div>
+    <div>
+      <div
+        v-for="thread in threads"
+        :key="thread.id"
+        class="p-4 mb-2 bg-white rounded-xl shadow flex justify-between space-x-4"
+      >
+        <div class="flex align-baseline gap-12">
           <div>
-            <p class="text-xsmall">
-              <a href="#">{{ userById(thread.userId).name }}</a>
+            <img class="avatar-medium mb-2" :src="userById(thread.userId).avatar" alt="" />
+            <div>
+              <p class="text-sm">
+                <a href="#">{{ userById(thread.userId).name }}</a>
+              </p>
+              <p class="text-sm text-slate-400">
+                <BaseDate :timestamp="thread.publishedAt" />
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-start">
+            <p class="text-lg">
+              <router-link :to="{ name: 'ThreadShow', params: { id: thread.id } }">{{
+                thread.title
+              }}</router-link>
             </p>
-            <p class="text-xsmall text-faded">
-              <BaseDate :timestamp="thread.publishedAt" />
+            <p class="text-sm text-slate-400">
+              By <a href="#">{{ userById(thread.userId).name }}</a
+              >, <BaseDate :timestamp="thread.publishedAt" />.
             </p>
           </div>
+        </div>
+        <div class="self-end">
+          <p class="text-slate-400">{{ thread.posts.length }} replies</p>
         </div>
       </div>
     </div>
