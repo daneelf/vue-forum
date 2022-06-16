@@ -1,33 +1,30 @@
 <template>
-  <header class="header" id="header">
-    <router-link :to="{ name: 'Home' }" class="logo">
-      <img src="../assets/svg/Vue.js_Logo_2.svg" />
+  <header class="flex items-center p-6 h-20 bg-slate-900" id="header">
+    <router-link :to="{ name: 'Home' }" class="w-16">
+      <img class="max-w-full" src="../assets/svg/Vue.js_Logo_2.svg" />
     </router-link>
 
-    <div class="btn-hamburger">
+    <div class="btn-hamburger w-7 h-7 ml-5 relative lg:hidden">
       <!-- use .btn-humburger-active to open the menu -->
-      <div class="top bar"></div>
-      <div class="middle bar"></div>
-      <div class="bottom bar"></div>
+      <div class="top-2 w-7 h-1 absolute rounded-full bg-white"></div>
+      <div class="top-4 w-7 h-1 absolute rounded-full bg-white"></div>
+      <div class="bottom-6 w-7 h-1 absolute rounded-full bg-white"></div>
     </div>
 
     <!-- use .navbar-open to open nav -->
-    <nav class="navbar">
-      <ul>
-        <li class="navbar-user">
-          <router-link :to="{ name: 'Profile' }">
-            <img
-              class="avatar-small"
-              :src="authUser.avatar"
-              :alt="`${authUser.name}`"
-            />
+    <nav class="w-full flex flex-row-reverse justify-between">
+      <ul class="flex items-center justify-start">
+        <li class="ml-auto">
+          <router-link :to="{ name: 'Profile' }" class="flex items-center text-white">
+            <div class="w-9 m-2">
+              <img
+                class="rounded-full max-w-full"
+                :src="authUser.avatar"
+                :alt="`${authUser.name}`"
+              />
+            </div>
             <span>
               {{ authUser.name }}
-              <img
-                class="icon-profile"
-                src="assets/img/svg/arrow-profile.svg"
-                alt=""
-              />
             </span>
           </router-link>
 
@@ -70,10 +67,10 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 export default {
   computed: {
-    ...mapGetters(["authUser"]),
+    ...mapGetters(['authUser']),
   },
 };
 </script>
