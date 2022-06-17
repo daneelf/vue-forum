@@ -1,7 +1,8 @@
 <template>
-  <div class="forum-list">
-    <h2 class="list-title">
+  <div class="p-0 bg-white mt-2">
+    <h2 class="p-6 bg-cyan-900 w-full shadow-lg rounded-xl flex items-center">
       <router-link
+        class="text-white hover:text-white"
         v-if="categoryId"
         :to="{ name: 'Category', params: { id: categoryId } }"
         >{{ title }}</router-link
@@ -9,28 +10,26 @@
       <span v-else>{{ title }}</span>
     </h2>
     <div
-      class="forum-listing"
+      class="flex flex-wrap justify-between items-center py-7 pl-7 pr-2.5"
       v-for="forum in categoryForumsData"
       :key="forum.id"
     >
-      <div class="forum-details">
-        <router-link
-          :to="{ name: 'Forum', params: { id: forum.id } }"
-          class="forum-name"
-          >{{ forum.name }}</router-link
-        >
+      <div class="basis-full sm:basis-1/2">
+        <router-link :to="{ name: 'Forum', params: { id: forum.id } }" class="forum-name">{{
+          forum.name
+        }}</router-link>
 
-        <p class="forum-description">{{ forum.description }}</p>
+        <p>{{ forum.description }}</p>
       </div>
 
-      <div class="threads-count">
-        <p class="count text-lead">
+      <div class="basis-1/6 font-thin">
+        <p class="text-xl">
           <span>{{ forum.threads?.length }}</span>
           {{ forumThreadWord(forum) }}
         </p>
       </div>
 
-      <div class="last-thread"></div>
+      <div class="flex basis-2/6 justify-start align center"></div>
     </div>
   </div>
 </template>
@@ -44,7 +43,7 @@ export default {
     },
     title: {
       type: String,
-      default: "Forums",
+      default: 'Forums',
     },
   },
   data() {
@@ -56,16 +55,14 @@ export default {
     forumThreadWord(forum) {
       return forum.threads?.length
         ? forum.threads?.length > 1
-          ? "threads"
-          : "thread"
-        : "no threads";
+          ? 'threads'
+          : 'thread'
+        : 'no threads';
     },
   },
   computed: {
     categoryForumsData() {
-      return this.forums.filter(
-        (forum) => forum.categoryId === this.categoryId
-      );
+      return this.forums.filter((forum) => forum.categoryId === this.categoryId);
     },
   },
 };
