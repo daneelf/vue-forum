@@ -1,7 +1,7 @@
 <template>
   <div class="col-full push-top">
     <div class="forum-header">
-      <div class="forum-details">
+      <div class="text-cyan-700">
         <h1>{{ forum.name }}</h1>
         <p class="text-lead">{{ forum.description }}</p>
       </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { ThreadList } from "@/components";
+import { ThreadList } from '@/components';
 
 export default {
   components: {
@@ -36,9 +36,7 @@ export default {
       return this.$store.state.forums.find((forum) => forum.id === this.id);
     },
     threads() {
-      return this.$store.state.threads.filter(
-        (thread) => thread.forumId === this.id
-      );
+      return this.$store.state.threads.filter((thread) => thread.forumId === this.id);
     },
   },
 };

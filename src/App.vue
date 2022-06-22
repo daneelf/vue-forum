@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import { TheNavBar } from "@/components";
+import { TheNavBar } from '@/components';
 export default {
-  name: "App",
+  name: 'App',
   components: {
     TheNavBar,
   },
@@ -16,5 +16,5 @@ export default {
 </script>
 
 <style>
-@import "assets/style.css";
+@import 'assets/style.css';
 </style>

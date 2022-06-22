@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ForumList from "@/components/ForumList";
+import ForumList from './ForumList.vue';
 
 export default {
   components: {

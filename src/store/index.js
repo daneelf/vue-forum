@@ -1,10 +1,10 @@
-import { createStore } from "vuex";
-import sourceData from "@/data";
+import { createStore } from 'vuex';
+import sourceData from '@/data';
 
 export default createStore({
   state: {
     ...sourceData,
-    authId: "jVa6Go6Nl1Urkag1R2p9CHTf4ny1",
+    authId: 'jVa6Go6Nl1Urkag1R2p9CHTf4ny1',
   },
   getters: {
     authUser: (state) => {
@@ -29,28 +29,28 @@ export default createStore({
   },
   actions: {
     createPost({ commit, state }, post) {
-      post.id = "pst" + Math.random();
+      post.id = 'pst' + Math.random();
       post.userId = state.authId;
       post.publishedAt = Math.floor(Date.now() / 1000);
-      commit("setPost", { post });
-      commit("appendPostToThread", {
+      commit('setPost', { post });
+      commit('appendPostToThread', {
         postId: post.id,
         threadId: post.threadId,
       });
     },
     createThread({ commit, state, dispatch }, { text, title, forumId }) {
       const userId = state.authId;
-      const id = "thrd" + Math.random();
+      const id = 'thrd' + Math.random();
       const publishedAt = Math.floor(Date.now() / 1000);
 
       const thread = { forumId, title, publishedAt, userId, id };
-      commit("setThread", { thread });
-      commit("appendThreadToUser", { userId, threadId: id });
-      commit("appendThreadToForum", { forumId, threadId: id });
-      dispatch("createPost", { text, threadId: id });
+      commit('setThread', { thread });
+      commit('appendThreadToUser', { userId, threadId: id });
+      commit('appendThreadToForum', { forumId, threadId: id });
+      dispatch('createPost', { text, threadId: id });
     },
     updateUser({ commit }, user) {
-      commit("setUser", { user, userId: user.id });
+      commit('setUser', { user, userId: user.id });
     },
   },
   mutations: {

@@ -1,14 +1,13 @@
 <template>
   <div class="col-full push-top">
-    <h1>The Forum</h1>
-    <div class="forum-list">
-      <CategoriesList :categories="categories" />
-    </div>
+    <h1 class="text-3xl font-bold underline">The Forum</h1>
+
+    <CategoriesList :categories="categories" />
   </div>
 </template>
 
 <script>
-import { CategoriesList } from "@/components";
+import { CategoriesList } from '@/components';
 
 export default {
   components: {

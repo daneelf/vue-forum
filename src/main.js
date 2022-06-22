@@ -1,26 +1,28 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "@/router";
-import store from "@/store";
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from '@/router';
+import store from '@/store';
+import './index.css';
 
 const app = createApp(App);
 app.use(router);
 app.use(store);
 
-// register Base components automatically
-const requireComponent = require.context(
-  "./components",
-  true,
-  /Base[A-Z]\w+\.(vue|js)$/
+// prettier-ignore
+const componentFiles = import.meta.globEager(
+  './components/base/*.vue'
 );
 
-requireComponent.keys().forEach(function (fileName) {
-  let baseComponentConfig = requireComponent(fileName);
-  baseComponentConfig = baseComponentConfig.default || baseComponentConfig;
-  const baseComponentName =
-    baseComponentConfig.name ||
-    fileName.replace(/^.+\//, "").replace(/\.\w+$/, "");
-  app.component(baseComponentName, baseComponentConfig);
+Object.entries(componentFiles).forEach(([path, definition]) => {
+  // Get name of component, based on filename
+  // "./components/Fruits.vue" will become "Fruits"
+  const componentName = path
+    .split('/')
+    .pop()
+    .replace(/\.\w+$/, '');
+
+  // Register component on this Vue instance
+  app.component(componentName, definition.default);
 });
 
-app.mount("#app");
+app.mount('#app');

@@ -1,7 +1,7 @@
-import Home from "@/pages/Home";
-import ThreadShow from "@/pages/ThreadShow";
-import NotFound from "@/pages/NotFound";
-import Forum from "@/pages/Forum";
-import Profile from "@/pages/Profile";
-import ThreadCreate from "@/pages/ThreadCreate";
+import Home from './Home.vue';
+import ThreadShow from './ThreadShow.vue';
+import NotFound from './NotFound.vue';
+import Forum from './Forum.vue';
+import Profile from './Profile.vue';
+import ThreadCreate from './ThreadCreate.vue';
 export { Home, ThreadShow, NotFound, Forum, Profile, ThreadCreate };
