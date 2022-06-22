@@ -1,9 +1,8 @@
 <template>
   <div class="col-full push-top">
     <h1 class="text-3xl font-bold underline">The Forum</h1>
-    <div class="forum-list">
-      <CategoriesList :categories="categories" />
-    </div>
+
+    <CategoriesList :categories="categories" />
   </div>
 </template>
 

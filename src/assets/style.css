@@ -9,7 +9,7 @@ body {
   box-sizing: border-box;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   html {
     font-size: 16px;
   }
@@ -19,7 +19,7 @@ body {
   html {
     font-size: 14px;
   }
-}
+} */
 
 body {
   line-height: 1.5;
@@ -123,11 +123,7 @@ figcaption {
   display: inline;
 }
 
-.forum-list
-  .forum-listing
-  .forum-details
-  ul.subforums.subforums
-  li:not(:last-of-type)::after {
+.forum-list .forum-listing .forum-details ul.subforums.subforums li:not(:last-of-type)::after {
   content: '\f111';
   font-family: 'FontAwesome';
   font-size: 4px;

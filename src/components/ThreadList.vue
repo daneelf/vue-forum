@@ -8,14 +8,20 @@
       >
         <div class="flex align-baseline gap-12">
           <div>
-            <img class="avatar-medium mb-2" :src="userById(thread.userId).avatar" alt="" />
+            <div class="w-16 h-16 mb-4">
+              <img
+                class="rounded-full h-full w-full mb-2"
+                :src="userById(thread.userId).avatar"
+                alt=""
+              />
+            </div>
             <div>
               <p class="text-sm">
                 <a href="#">{{ userById(thread.userId).name }}</a>
               </p>
-              <p class="text-sm text-slate-400">
+              <!-- <p class="text-sm text-slate-400">
                 <BaseDate :timestamp="thread.publishedAt" />
-              </p>
+              </p> -->
             </div>
           </div>
           <div class="flex flex-col justify-start">
