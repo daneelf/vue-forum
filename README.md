@@ -1,5 +1,6 @@
 # Forum
-
+Hello dear viewer!
+This is a practice project. Please don't judge! Working through it and trying to apply best practices as I go.
 ## Project setup
 ```
 npm install
